@@ -1,0 +1,27 @@
+<header class="page-header">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="./assets/images/profile/logo1.png" alt="Logo" class="logo" />
+            </a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+        <div class="nav-links">
+            <a href="#home">Trang chủ</a>
+            <a href="#about">Về tôi</a>
+            <a href="#projects">Dự án</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#contact" class="contact-button">Liên hệ</a>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("click", (e) => {
+            const toggle = e.target.closest(".menu-toggle");
+            if (!toggle) return;
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+</header>

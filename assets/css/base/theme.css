@@ -1,0 +1,8 @@
+:root {
+    --main-color: #222;
+    --accent-color: #3c92f4;
+    --gray-light: #eaeaea;
+    --gray-dark: #777;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --radius: 40px;
+}

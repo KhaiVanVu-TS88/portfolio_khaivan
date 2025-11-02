@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khai's Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <!-- contents -->
+    <div id="header-placeholder"></div>
+    <main id="main-placeholder" role="main" aria-live="polite"></main>
+    <div id="footer-placeholder"></div>
+
+    <!-- scripts -->
+    <script src="./js/include.js"></script>
+    <script src="./js/router.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        // tải header & footer rồi load trang mặc định (router sẽ xử lý hash)
+        (async function init() {
+            await loadComponent("header-placeholder", "./components/header.html");
+            await loadComponent("footer-placeholder", "./components/footer.html");
+            // router xử lý trang hiện tại (hash) hoặc default 'home'
+            routerInit();
+        })();
+    </script>
+
+</body>
+
+</html>

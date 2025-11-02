@@ -1,0 +1,148 @@
+/* ---------------- HEADER ---------------- */
+.page-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    /* căn giữa navbar */
+    padding: 20px 0;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 10px 24px;
+    gap: 20px;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+}
+
+/* ---------------- LOGO ---------------- */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ---------------- NAV LINKS ---------------- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* ---------------- CONTACT BUTTON ---------------- */
+.contact-button {
+    background: var(--main-color);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(34, 34, 34, 0.1);
+    border: none;
+    transition: transform 0.25s, background 0.3s;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background: #444;
+    transform: scale(1.05);
+}
+
+/* ---------------- MENU TOGGLE ---------------- */
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 20px;
+        max-width: 95%;
+        /* tránh bị tràn ra ngoài */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 16px;
+        margin-top: 10px;
+        box-shadow: var(--shadow);
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+    }
+
+    .contact-button {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+/* Hiệu ứng mở menu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
